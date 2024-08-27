@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1 class="title">Your Shopping List:</h1>
+
+{% if list|length > 0 %}
+<ul class="items">
+    <table class="table1">
+        <thead>
+            <tr class="row1 tblhdr1">
+                <th class="cell1">Item</th>
+                <th class="cell1">Category</th>
+                <th class="cell1">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in list %}
+            <tr class="row1">
+                <td class="name1">
+                    <div>{{item['item']}}</div>
+                </td>
+                <td class="category1">
+                    <div>{{item['category']}}</div>
+                </td>
+                <td class="actions1"><a href="/edit/{{item['item']}}" class="btn btn-info">Edit</a><a href="/delete/{{item['item']}}" class="btn btn-danger">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</ul>
+{% else %}
+<p>You haven't added any items yet!</p>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+    <h2> Edit an Item: </h2>
+
+    <div class="container text-left">
+        <div class="inputbox-add-item" id="add-item">
+            <form method="POST" action="/edit/{{item['item']}}">
+                <div class="form-group">
+                    <input class="form-control item" name="item" placeholder="Item" required value="{{item['item']}}">
+                    <input class="form-control item" name="category" placeholder="Category Ex. Food, Book" required value="{{item['category']}}">
+                    <button class="btn btn-primary" id="item-submit" type="submit">Submit </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <br>
+
+
+</div>
+{% endblock content %}

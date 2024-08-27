@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+    <h2> Delete an Item: </h2>
+
+    <div class="container text-left">
+        <div class="inputbox-add-item" id="add-item">
+            <form method="POST" action="/delete/{{item['item']}}">
+                <h3 class="warning">Are you sure you want to delete {{item['item']}}, {{item['category']}}</h3>
+                <div class="form-group">
+                    <button class="btn btn-danger" id="item-delete" type="submit">Yes </button>
+                    <a href="/home" class="btn btn-info">No, go back</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <br>
+
+
+</div>
+{% endblock content %}
